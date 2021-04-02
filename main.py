@@ -2,11 +2,16 @@
 
 from sego.sego import Sego
 from sego.Views.Views import Views
+app = Sego()
+
 
 views = Views(view_path="app/templates/")
-app = Sego()
-credentials = {"config_path":"app/Configurations/"}
-app.register_configurations(credentials=credentials,)
+exception_packages = "app.Exceptions"
 routes_package_path = "app.routes"
-app.register_routes(routes_package_path)
+credentials = {"config_path":"app/Configurations/"}
+
+app.register_exception_handlers(exception_packages)
 app.register_views(views)
+app.register_configurations(credentials=credentials,)
+app.register_routes(routes_package_path)
+
