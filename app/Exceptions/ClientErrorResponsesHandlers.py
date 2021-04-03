@@ -6,7 +6,8 @@ app = Sego()
 
 def NotFoundHandler(request, response, exception):
     views = app.get_view_environment()
-    response.text = views.render_view("tests/index.html", context={"name": "name", "title": "framework"})
+    response.status_code = 404
+    response.text = views.render_view("exceptions/404.html", context={})
 
 
 app.add_exception_handler(sego.Exceptions.NotFoundException404, NotFoundHandler)
