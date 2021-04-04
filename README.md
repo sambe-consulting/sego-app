@@ -15,4 +15,4 @@
 
 ## About Sego-app 
 
-This repository houses the app templates and structure that is used by sego-cli to init a project.
+This repository houses the app templates and structure that is used by <a href="https://github.com/sambe-consulting/sego-cli">sego-cli</a> to init a project.
