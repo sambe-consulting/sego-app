@@ -37,7 +37,7 @@ requests-toolbelt==0.9.1
 requests-wsgi-adapter==0.4.1
 rfc3986==1.4.0
 SecretStorage==3.3.1
-sego==0.1.0.1
+sego==0.1.0.3
 singleton-decorator==1.0.0
 six==1.15.0
 toml==0.10.2
