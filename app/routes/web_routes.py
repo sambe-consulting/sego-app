@@ -2,6 +2,7 @@ from sego.Routing.Route import Route
 from sego.Routing.Router import Router
 from sego.Routing.Verb import Verb
 from sego.sego import Sego
+from sego.Middleware.Middleware import Middleware
 
 sego = Sego()
 
@@ -18,10 +19,10 @@ url = "/"  # The path we are expecting
 
 # A route is defined
 homepage_route = Route(name=route_name, \
-                       verbs=http_method, \
+                       verb=http_method, \
                        controller=controller, \
                        action=action, \
-                       url=url)
+                       url=url).set_middleware(Middleware.PREPROCESS,['example3'])
 
 # add the route to the router
 router.add_route(homepage_route)
