@@ -11,4 +11,4 @@ class ExampleMiddleware(Middleware):
         print("Processing request", request.url)
 
     def process_response(self, request: Request, response: Response):
-        print("Processing response", Request.url)
+        print("Processing response", request.url)

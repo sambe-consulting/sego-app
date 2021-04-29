@@ -13,5 +13,4 @@ from . import BaseController
 class HomeController(BaseController):
 
     def index(self, request, response):
-        response.body = self.Views.render_view("home.html").encode()
-        return response
+        response.html = self.Views.render_view("home.html")
