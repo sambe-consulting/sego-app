@@ -2,7 +2,7 @@
 
 from sego.sego import Sego
 from sego.Views.Views import Views
-app = Sego()
+app = Sego(application_name="application")
 
 
 exception_packages = "app.Exceptions"
@@ -19,4 +19,5 @@ app.register_static_files(static_dir=static_files_dir)
 app.register_views(views)
 app.register_configurations(credentials=credentials,)
 app.register_routes(routes_package_path)
+app.register_database()
 
