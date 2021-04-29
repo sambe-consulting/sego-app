@@ -1,0 +1,19 @@
+{
+  "default": "mysql",
+  "mysql": {
+    "driver": "mysql",
+    "host": "localhost",
+    "database": "database",
+    "user": "root",
+    "password": "",
+    "prefix": ""
+  },
+  "postgres": {
+    "driver": "postgres",
+    "host": "localhost",
+    "database": "database",
+    "user": "root",
+    "password": "",
+    "prefix": ""
+  }
+}
