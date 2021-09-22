@@ -12,5 +12,5 @@ from . import BaseController
 
 class HomeController(BaseController):
 
-    def index(self, request, response):
-        response.html = self.Views.render_view("home.html")
+    def index(self):
+        return self.Views.render_view("home.html")

@@ -1,8 +1,6 @@
-
-
 from sego.sego import Sego
 from sego.Views.Views import Views
-app = Sego(application_name="application")
+sego_app = Sego(application_name="application")
 
 
 exception_packages = "app.Exceptions"
@@ -13,11 +11,19 @@ templates_dir = "app/templates"
 static_files_dir = "app/public"
 
 views = Views(view_path=templates_dir)
-app.register_middleware(middleware_package_path)
-app.register_exception_handlers(exception_packages)
-app.register_static_files(static_dir=static_files_dir)
-app.register_views(views)
-app.register_configurations(credentials=credentials,)
-app.register_routes(routes_package_path)
-app.register_database()
+sego_app.register_middleware(middleware_package_path)
+sego_app.register_exception_handlers(exception_packages)
+sego_app.register_static_files(static_dir=static_files_dir)
+sego_app.register_views(views)
+sego_app.register_configurations(credentials=credentials,)
+sego_app.register_routes(routes_package_path)
+sego_app.register_database()
+sego_app.setup_app()
+# For dev use only.
+sego_app.dev_run(port=9001)
+
+# For production use with WSGI server
+#
+app = sego_app.get_app()
+#
 
